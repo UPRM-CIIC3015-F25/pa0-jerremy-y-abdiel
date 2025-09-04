@@ -84,7 +84,7 @@ player = pygame.Rect(screen_width/2 - 45, screen_height - 20, player_width, play
 
 # Game Variables
 ball_speed_x = 0
-ball_speed_y = 10
+ball_speed_y = 0
 player_speed = 0
 
 # Score Text setup
