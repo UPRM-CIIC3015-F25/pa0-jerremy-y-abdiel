@@ -25,7 +25,9 @@ def ball_movement():
             score = 1  # Increase player score
             ball_speed_y *= -1  # Reverse ball's vertical direction
             # TODO Task 6: Add sound effects HERE
-
+            hit_sound = pygame.mixer.Sound("button-3.wav")
+            hit_sound.set_volume(0.1)
+            hit_sound.play()
     # Ball collision with top boundary
     if ball.top <= 0:
         ball_speed_y *= -1  # Reverse ball's vertical direction
@@ -82,7 +84,7 @@ player = pygame.Rect(screen_width/2 - 45, screen_height - 20, player_width, play
 
 # Game Variables
 ball_speed_x = 0
-ball_speed_y = 0
+ball_speed_y = 10
 player_speed = 0
 
 # Score Text setup
@@ -95,7 +97,7 @@ start = False  # Indicates if the game has started
 while True:
     # Event handling
     # TODO Task 4: Add your name
-    name = "John Doe"
+    name = "Jerremy"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  # Quit the game
             pygame.quit()
