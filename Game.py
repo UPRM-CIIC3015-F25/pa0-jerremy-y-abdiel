@@ -22,7 +22,7 @@ def ball_movement():
     if ball.colliderect(player):
         if abs(ball.bottom - player.top) < 10:  # Check if ball hits the top of the paddle
             # TODO Task 2: Fix score to increase by 1
-            score = 1  # Increase player score
+            score += 1  # Added the + sign in front of the equal sign
             ball_speed_y *= -1  # Reverse ball's vertical direction
             # TODO Task 6: Add sound effects HERE
 
@@ -117,13 +117,13 @@ while True:
     ball_movement()
     player_movement()
 
-    # Visuals
+    # Visuals # Changed the ball's color from light_grey to red
     light_grey = pygame.Color('grey83')
-    red = pygame.Color('red')
+    red = pygame.Color('firebrick1')
     screen.fill(bg_color)  # Clear screen with background color
     pygame.draw.rect(screen, light_grey, player)  # Draw player paddle
     # TODO Task 3: Change the Ball Color
-    pygame.draw.ellipse(screen, light_grey, ball)  # Draw ball
+    pygame.draw.ellipse(screen, red, ball)  # Draw ball
     player_text = basic_font.render(f'{score}', False, light_grey)  # Render player score
     screen.blit(player_text, (screen_width/2 - 15, 10))  # Display score on screen
 
