@@ -24,6 +24,15 @@ def ball_movement():
             # TODO Task 2: Fix score to increase by 1
             score += 1  # Added the + sign in front of the equal sign
             ball_speed_y *= -1  # Reverse ball's vertical direction
+            # Increase ball speed each time it hits the paddle
+            if ball_speed_y > 0:
+                ball_speed_y += 1
+            else:
+                ball_speed_y -= 1
+            if ball_speed_x > 0:
+                ball_speed_x += 1
+            else:
+                ball_speed_x -= 1
             # TODO Task 6: Add sound effects HERE
             hit_sound = pygame.mixer.Sound("button-3.wav")
             hit_sound.set_volume(0.1)
