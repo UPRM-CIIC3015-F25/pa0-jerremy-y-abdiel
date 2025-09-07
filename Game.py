@@ -1,5 +1,11 @@
 import pygame, sys, random
 
+pygame.init()
+
+pygame.mixer.music.load("music_bg.wav") # The file that would be used for background noise!
+pygame.mixer.music.set_volume(0.5) # User can set what ever volume they decide
+pygame.mixer.music.play(-1) # This would be the loop -1 for example: Loops forever the song :)
+
 def ball_movement():
     """
     Handles the movement of the ball and collision detection with the player and screen boundaries.
@@ -106,7 +112,7 @@ start = False  # Indicates if the game has started
 while True:
     # Event handling
     # TODO Task 4: Add your name
-    name = "Abdiel Rodríguez"
+    name = "John Doe"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  # Quit the game
             pygame.quit()
